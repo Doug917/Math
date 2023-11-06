@@ -12,6 +12,14 @@ class Polynomial:
         except IndexError:
             print(f"Polynomial degree {self.degree} is less than requested exponent coefficient.")
 
+    def eval(self, n):
+
+        result = 0
+        for i in range(self.degree+1):
+            result += self.coeffs[i] * n ** i
+
+        return result
+
     def __mul__(self, p):
 
         product_polynomial = [0] * (self.degree + p.degree + 1)
