@@ -20,6 +20,15 @@ class Polynomial:
 
         return result
 
+    def display(self):
+
+        poly_str = ''
+        for i in range(self.degree+1):
+            poly_str += f"{self.coeffs[i]}*x^{i} + "
+
+
+        return poly_str[:-2]
+
     def __mul__(self, p):
 
         product_polynomial = [0] * (self.degree + p.degree + 1)
